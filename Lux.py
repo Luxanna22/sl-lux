@@ -20,7 +20,7 @@ def home():
     st.title("Greetings!")
     col1, col2 = st.columns([2, 2]) 
     with col1:
-        st.image("3RD-YR\\assets\\joseph.jpg", caption="Lady of Luminosity")
+        st.image("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg", caption="Lady of Luminosity")
     with col2:
         st.write("\n\n\nI am :blue[Lux]. \n\n\nPlease select a project from the sidebar to get started.")
         st.divider()
@@ -36,7 +36,7 @@ def graphs():
     code = "Console.WriteLine(\"Hello World\");"
     st.title("Ecommerce Customers")
     # st.image("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg")
-    df = pd.read_excel("3RD-YR\\assets\\Book1.xlsx")
+    df = pd.read_excel("Book1.xlsx")
     def graphSelect():
         chart_type = st.selectbox("Select Chart Type", ["Select Chart Type","Line Chart", "Bar Chart", "Area Chart"], label_visibility="collapsed")
         if chart_type == "Line Chart":
