@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import requests
 import time
-import matplotlib.pyplot as plt
 
 # main
 def main():
@@ -36,22 +35,16 @@ def graphs():
     code = "Console.WriteLine(\"Hello World\");"
     st.title("Ecommerce Customers")
     # st.image("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg")
-    df = pd.read_excel("Book1.xlsx")
+    df = df.drop("Email", axis=1)
     def graphSelect():
         chart_type = st.selectbox("Select Chart Type", ["Select Chart Type","Line Chart", "Bar Chart", "Area Chart"], label_visibility="collapsed")
         if chart_type == "Line Chart":
-            fig, ax = plt.subplots()
-            ax.plot(df['Age'], df.iloc[:, 0]) 
-            st.pyplot(fig)
-        elif chart_type == "Bar Chart":
-            fig, ax = plt.subplots()
-            ax.bar(df['Age'], df.iloc[:, 0])  
-            st.pyplot(fig)
+            st.line_chart(df.set_index('Name'))
+        elif chart_type == "Bar Chart": 
+            st.bar_chart(df.set_index('Name'))
         elif chart_type == "Area Chart":
-            fig, ax = plt.subplots()
-            ax.fill_between(df.index, df.iloc[:, 0]) 
-            st.pyplot(fig)
-
+            st.area_chart(df.set_index('Name'))
+            
     graphSelect()
 def get_chatbot_response(query):
     # api_url = "https://hiroshi-api.onrender.com/ai/gpt3?ask=" + query
