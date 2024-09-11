@@ -48,9 +48,7 @@ def graphs():
             
     graphSelect()
 def get_chatbot_response(query):
-    # api_url = "https://hiroshi-api.onrender.com/ai/gpt3?ask=" + query
-    # api_url = "https://markdevs-api.onrender.com/gpt4?prompt="+query+"&uid=01012"
-    api_url = "https://nash-rest-api-production.up.railway.app/Mixtral?userId=010110&message="+query
+    api_url = "db_api"+query
     response = requests.get(api_url)
     if response.status_code == 200:
         response_json = response.json()
