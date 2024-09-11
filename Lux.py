@@ -48,7 +48,7 @@ def graphs():
             
     graphSelect()
 def get_chatbot_response(query):
-    api_url = "db_api"+query
+    api_url = st.secrets["db_api"]+query
     response = requests.get(api_url)
     if response.status_code == 200:
         response_json = response.json()
