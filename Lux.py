@@ -35,7 +35,7 @@ def graphs():
     code = "Console.WriteLine(\"Hello World\");"
     st.title("Ecommerce Customers")
     # st.image("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg")
-    df = pd.read_excel("3RD-YR\\assets\\Book1.xlsx")
+    df = pd.read_excel("Book1.xlsx")
     df = df.drop("Email", axis=1)
     def graphSelect():
         chart_type = st.selectbox("Select Chart Type", ["Select Chart Type","Line Chart", "Bar Chart", "Area Chart"], label_visibility="collapsed")
